@@ -2,7 +2,10 @@ name: Labeler
 on: [pull_request]
 
 jobs:
-  label:
+  design:
+    - static/*
+
+  core: flask-heroku-example/**.py
 
     runs-on: ubuntu-latest
 
@@ -10,3 +13,4 @@ jobs:
     - uses: actions/labeler@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+
